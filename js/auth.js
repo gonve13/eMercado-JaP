@@ -14,7 +14,7 @@ function checkAuth(){
 	if (password && username || sessionUser && sessionPass){
 		session.removeItem("originLink")
 	} else {
-		window.location.replace("./login.html")
+		window.location.replace("login.html")
 	}
 	
 	
