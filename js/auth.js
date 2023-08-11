@@ -7,11 +7,14 @@ function checkAuth(){
 
 	const username = permanent.getItem("user");
 	const password = permanent.getItem("password");
+	const sessionUser = session.getItem("user");
+	const sessionPass = session.getItem("password")
+	
 		
-	if (password || username){
+	if (password && username || sessionUser && sessionPass){
 		session.removeItem("originLink")
 	} else {
-		window.location.replace("/login.html")
+		window.location.replace("./login.html")
 	}
 	
 	
