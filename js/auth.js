@@ -1,7 +1,8 @@
 const permanent = window.localStorage;
 const session = window.sessionStorage;
+const currentPage = window.location.href
 
-session.setItem("originLink", window.location.href)
+session.setItem("originLink", currentPage)
 
 function checkAuth(){
 
@@ -25,6 +26,9 @@ function logOut(){
 	permanent.removeItem("password")
 	session.removeItem("user")
 	session.removeItem("password")
+	
+	return "success";
 }
 
-checkAuth();
+if (window.location.pathname.length > 1 &&
+!window.location.pathname.includes("index")) checkAuth();
