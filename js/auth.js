@@ -1,6 +1,6 @@
 const permanent = window.localStorage;
 const session = window.sessionStorage;
-const currentPage = window.location.href
+const currentPage = window.location.href;
 
 session.setItem("originLink", currentPage)
 
@@ -30,5 +30,4 @@ function logOut(){
 	return "success";
 }
 
-if (window.location.pathname.length > 1 &&
-!window.location.pathname.includes("index")) checkAuth();
+if (typeof indice === "undefined") checkAuth();
